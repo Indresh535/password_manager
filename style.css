@@ -1,0 +1,230 @@
+
+* {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+
+body{
+    min-height: 100vh; 
+    background-image: url('includes/images/password-lock-image.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+nav {
+  background: #1b1b1b;
+  position: relative;
+  width: 100%;
+}
+
+nav:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+nav .logo {
+  float: left;
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 60px;
+}
+
+
+
+nav ul {
+  float: left;
+  list-style: none;
+  left: 40%;
+  position: relative;
+}
+
+
+nav ul li {
+  /* float: left;  */
+  display: inline-block;
+  background: #1b1b1b;
+  margin: 0 50px;
+}
+
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bolder;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+
+
+nav ul li a:hover{
+  color: cyan;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #33ffff
+             ,0 0 5px #66ffff;
+}
+
+
+  /*==========================************** Design For Login  Box ****************========================== */
+
+
+.login-box {
+width: 100%;
+height: 100vh;
+position: relative;
+}
+
+
+.container{
+  width: 400px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding: 50px;
+  background: rgba(0,0,0,0.8);
+  border-radius: 10px;
+}
+
+.container h1 {
+  margin-bottom: 30px;
+  color:#fff;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.container .form_input{
+  position: relative;
+}
+
+.container .form_input input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  border: none;
+  border-bottom: 1px solid  #fff;
+  background: transparent; 
+  outline: none; 
+}
+
+.container .form_input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+
+.container .form_input input:focus ~ label,
+.container .form_input input:valid ~ label {
+  top: -14px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+}
+
+
+.container button{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #03a9f4;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  box-shadow: 0 0 5px #33ffff
+             ,0 0 5px #66ffff;
+  background: #03a9f4;
+}
+
+.btn:active{
+  transform:scale(1.1);
+}
+
+
+
+  /*==========================************** Design For SignUp Form ****************========================== */
+
+
+
+.SidebarToggle {
+  background: #ff2600;
+  border-radius: 50%;
+  width: 120px;
+  height: 50px;
+  padding: 5px;
+  position: absolute;
+  top: 130px;
+  left: 80px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.SidebarToggle:hover{
+  background-color: #eb3717;
+  box-shadow: 0 0 5px #ff3333
+             ,0 0 5px #ff3333;
+}
+
+.sidebar{
+  z-index: 90;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url('includes/images/password-lock-image.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transform: translateX(-100%);
+  transition: transform 250ms ease-in-out;
+}
+
+#openSidebar:checked ~  .sidebar{
+  transform: translateX(0px);
+}
+
+.SignInButton{
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s;
+} 
+
+#openSidebar:not(:checked) ~  .SidebarToggle > .SignInButton::before{
+  visibility: visible;
+  content: "SignIn";
+  text-transform:capitalize;
+  text-decoration: underline;
+  text-shadow: #ffffff;
+  font-weight: bolder;
+  background: #f42703;
+  color: rgba(0,0,0,0.8);
+}
+
+#openSidebar:checked ~  .SidebarToggle > .SignInButton::after{
+  visibility: visible;
+  content: "LogIn";
+  text-transform:capitalize; 
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #ffffff;
+}
